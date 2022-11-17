@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PhotoCard from './PhotoCard'
+import PhotoCard from '../components/PhotoCard'
 import { useGetPhotos } from '../hooks/useGetPhotos'
 
 export const ListOfPhotoCards = () => {

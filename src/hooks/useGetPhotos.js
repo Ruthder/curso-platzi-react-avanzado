@@ -1,7 +1,6 @@
-import { useQuery } from '@apollo/client'
-import gql from 'graphql-tag'
+import { useQuery, gql } from '@apollo/client'
 
-export const withPhotos = gql`
+export const GET_PHOTOS = gql`
   query getPhotos($categoryId: ID) {
     photos(categoryId: $categoryId) {
       id
@@ -15,6 +14,6 @@ export const withPhotos = gql`
 `
 
 export const useGetPhotos = categoryId => {
-  const { loading, data, error } = useQuery(withPhotos, { variables: { categoryId } })
+  const { loading, data, error } = useQuery(GET_PHOTOS, { variables: { categoryId } })
   return { loading, data, error }
 }
